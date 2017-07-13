@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="12121" systemVersion="16F73" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" colorMatched="YES" initialViewController="49e-Tb-3d3">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="12121" systemVersion="16F73" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" colorMatched="YES" initialViewController="HTD-et-byP">
     <device id="retina4_7" orientation="portrait">
         <adaptation id="fullscreen"/>
     </device>
@@ -10,58 +10,72 @@
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
     <scenes>
-        <!--Coin Overview Table View Controller-->
+        <!--Currencies-->
         <scene sceneID="YHr-3T-4T1">
             <objects>
                 <tableViewController id="idh-Yb-Ff0" customClass="CoinOverviewTableViewController" customModule="CryptoTrackr" customModuleProvider="target" sceneMemberID="viewController">
-                    <tableView key="view" clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="53" sectionHeaderHeight="28" sectionFooterHeight="28" id="dK9-9Z-dKE">
+                    <tableView key="view" clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="44" sectionHeaderHeight="28" sectionFooterHeight="28" id="dK9-9Z-dKE">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                         <prototypes>
-                            <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" reuseIdentifier="cryptoCell" rowHeight="53" id="uCj-Zq-hAl" customClass="CoinOverviewTableViewCell" customModule="CryptoTrackr">
-                                <rect key="frame" x="0.0" y="28" width="375" height="53"/>
+                            <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" reuseIdentifier="cryptoCell" rowHeight="44" id="uCj-Zq-hAl" customClass="CoinOverviewTableViewCell" customModule="CryptoTrackr">
+                                <rect key="frame" x="0.0" y="28" width="375" height="44"/>
                                 <autoresizingMask key="autoresizingMask"/>
                                 <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="uCj-Zq-hAl" id="Plu-2s-Byn">
-                                    <rect key="frame" x="0.0" y="0.0" width="375" height="53"/>
+                                    <rect key="frame" x="0.0" y="0.0" width="375" height="43.5"/>
                                     <autoresizingMask key="autoresizingMask"/>
                                     <subviews>
-                                        <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="rrY-sy-Q7R">
-                                            <rect key="frame" x="8" y="8" width="40" height="40"/>
-                                            <constraints>
-                                                <constraint firstAttribute="width" constant="40" id="AgJ-lU-zNh"/>
-                                            </constraints>
-                                        </imageView>
                                         <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Crypto Name" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="zBI-et-hqb">
-                                            <rect key="frame" x="95" y="16" width="143" height="21"/>
+                                            <rect key="frame" x="108" y="11" width="143" height="21"/>
+                                            <constraints>
+                                                <constraint firstAttribute="width" constant="143" id="POI-we-8eP"/>
+                                            </constraints>
                                             <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                             <nil key="textColor"/>
                                             <nil key="highlightedColor"/>
                                         </label>
                                         <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Price" textAlignment="right" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Efg-pU-hSO">
-                                            <rect key="frame" x="289" y="15" width="78" height="21"/>
+                                            <rect key="frame" x="232" y="11" width="135" height="21"/>
                                             <constraints>
-                                                <constraint firstAttribute="width" constant="78" id="bsF-2U-hlN"/>
+                                                <constraint firstAttribute="width" constant="135" id="0Sl-df-TCm"/>
                                             </constraints>
                                             <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                             <nil key="textColor"/>
                                             <nil key="highlightedColor"/>
                                         </label>
+                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="#" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="zdc-jI-D8T">
+                                            <rect key="frame" x="8" y="11" width="31" height="21"/>
+                                            <constraints>
+                                                <constraint firstAttribute="width" constant="31" id="uRP-bK-LlS"/>
+                                            </constraints>
+                                            <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                            <nil key="textColor"/>
+                                            <nil key="highlightedColor"/>
+                                        </label>
+                                        <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="rrY-sy-Q7R">
+                                            <rect key="frame" x="57" y="6" width="30" height="30"/>
+                                            <constraints>
+                                                <constraint firstAttribute="width" constant="30" id="MH1-zf-q18"/>
+                                            </constraints>
+                                        </imageView>
                                     </subviews>
                                     <constraints>
-                                        <constraint firstItem="zBI-et-hqb" firstAttribute="centerY" secondItem="Plu-2s-Byn" secondAttribute="centerY" id="2QQ-u4-ygP"/>
-                                        <constraint firstAttribute="bottomMargin" secondItem="rrY-sy-Q7R" secondAttribute="bottom" constant="-3.5" id="2kM-nx-SEh"/>
-                                        <constraint firstItem="Efg-pU-hSO" firstAttribute="leading" secondItem="zBI-et-hqb" secondAttribute="trailing" constant="51" id="dEI-DW-3QC"/>
-                                        <constraint firstItem="Efg-pU-hSO" firstAttribute="trailing" secondItem="Plu-2s-Byn" secondAttribute="trailingMargin" id="fSc-iM-pZ4"/>
-                                        <constraint firstItem="Efg-pU-hSO" firstAttribute="centerY" secondItem="Plu-2s-Byn" secondAttribute="centerY" id="nkb-Em-yZY"/>
-                                        <constraint firstItem="rrY-sy-Q7R" firstAttribute="leading" secondItem="Plu-2s-Byn" secondAttribute="leadingMargin" id="u69-1m-crS"/>
-                                        <constraint firstItem="rrY-sy-Q7R" firstAttribute="top" secondItem="Plu-2s-Byn" secondAttribute="topMargin" id="uww-qh-fxX"/>
-                                        <constraint firstItem="zBI-et-hqb" firstAttribute="leading" secondItem="rrY-sy-Q7R" secondAttribute="trailing" constant="47" id="zC1-BL-syG"/>
+                                        <constraint firstItem="zdc-jI-D8T" firstAttribute="top" secondItem="Plu-2s-Byn" secondAttribute="topMargin" constant="3" id="0IG-3Z-tNJ"/>
+                                        <constraint firstItem="zBI-et-hqb" firstAttribute="baseline" secondItem="Efg-pU-hSO" secondAttribute="baseline" id="I7z-Oa-aCj"/>
+                                        <constraint firstItem="rrY-sy-Q7R" firstAttribute="top" secondItem="Plu-2s-Byn" secondAttribute="topMargin" constant="-2" id="Lsh-RL-2yi"/>
+                                        <constraint firstItem="rrY-sy-Q7R" firstAttribute="leading" secondItem="zdc-jI-D8T" secondAttribute="trailing" constant="18" id="Myl-hC-2pk"/>
+                                        <constraint firstItem="zdc-jI-D8T" firstAttribute="baseline" secondItem="zBI-et-hqb" secondAttribute="baseline" id="UXl-Lc-kX6"/>
+                                        <constraint firstItem="Efg-pU-hSO" firstAttribute="trailing" secondItem="Plu-2s-Byn" secondAttribute="trailingMargin" id="ZnW-Jh-Ign"/>
+                                        <constraint firstItem="zBI-et-hqb" firstAttribute="leading" secondItem="rrY-sy-Q7R" secondAttribute="trailing" constant="21" id="bQq-rq-GuK"/>
+                                        <constraint firstItem="zdc-jI-D8T" firstAttribute="leading" secondItem="Plu-2s-Byn" secondAttribute="leadingMargin" id="hLc-ea-knB"/>
+                                        <constraint firstItem="zdc-jI-D8T" firstAttribute="centerY" secondItem="rrY-sy-Q7R" secondAttribute="centerY" id="oCS-5L-ocw"/>
                                     </constraints>
                                 </tableViewCellContentView>
                                 <connections>
                                     <outlet property="cryptoName" destination="zBI-et-hqb" id="n7V-I0-jCM"/>
                                     <outlet property="cryptoPrice" destination="Efg-pU-hSO" id="RLV-H5-QP7"/>
+                                    <outlet property="cryptoRank" destination="zdc-jI-D8T" id="8uW-ti-N9r"/>
                                     <outlet property="crytoLogo" destination="rrY-sy-Q7R" id="ar9-q0-ndj"/>
                                 </connections>
                             </tableViewCell>
@@ -71,7 +85,7 @@
                             <outlet property="delegate" destination="idh-Yb-Ff0" id="iXy-T4-NVe"/>
                         </connections>
                     </tableView>
-                    <navigationItem key="navigationItem" id="2UU-9e-Kaw"/>
+                    <navigationItem key="navigationItem" title="Currencies" id="2UU-9e-Kaw"/>
                 </tableViewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="fI5-1R-sIE" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
@@ -106,10 +120,32 @@
             </objects>
             <point key="canvasLocation" x="2532" y="371.96401799100454"/>
         </scene>
+        <!--User Login View Controller-->
+        <scene sceneID="raw-01-diI">
+            <objects>
+                <viewController id="HTD-et-byP" customClass="UserLoginViewController" customModule="CryptoTrackr" customModuleProvider="target" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="2TV-cs-2Je"/>
+                        <viewControllerLayoutGuide type="bottom" id="Dz0-m1-1LN"/>
+                    </layoutGuides>
+                    <view key="view" contentMode="scaleToFill" id="8ea-wJ-IpQ">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                    </view>
+                    <connections>
+                        <segue destination="49e-Tb-3d3" kind="show" identifier="navToMain" id="Sxk-Vo-DWq"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="5iv-Qj-OnF" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="-1042" y="0.0"/>
+        </scene>
         <!--Tab Bar Controller-->
         <scene sceneID="yl2-sM-qoP">
             <objects>
                 <tabBarController id="49e-Tb-3d3" sceneMemberID="viewController">
+                    <navigationItem key="navigationItem" id="GuB-L1-uyV"/>
                     <nil key="simulatedBottomBarMetrics"/>
                     <tabBar key="tabBar" contentMode="scaleToFill" id="W28-zg-YXA">
                         <rect key="frame" x="0.0" y="975" width="768" height="49"/>
@@ -117,8 +153,8 @@
                         <color key="backgroundColor" red="0.0" green="0.0" blue="0.0" alpha="0.0" colorSpace="custom" customColorSpace="sRGB"/>
                     </tabBar>
                     <connections>
-                        <segue destination="Q89-M5-Sde" kind="relationship" relationship="viewControllers" id="aIV-uk-3Ou"/>
-                        <segue destination="lQQ-DY-Aai" kind="relationship" relationship="viewControllers" id="CMx-wA-Omg"/>
+                        <segue destination="lQQ-DY-Aai" kind="relationship" relationship="viewControllers" id="aKd-Ap-V2f"/>
+                        <segue destination="Q89-M5-Sde" kind="relationship" relationship="viewControllers" id="HaF-qU-v2n"/>
                     </connections>
                 </tabBarController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="HuB-VB-40B" sceneMemberID="firstResponder"/>

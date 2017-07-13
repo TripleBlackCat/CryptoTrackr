@@ -13,6 +13,7 @@ class CoinOverviewTableViewCell: UITableViewCell {
     @IBOutlet weak var crytoLogo: UIImageView!
     @IBOutlet weak var cryptoName: UILabel!
     @IBOutlet weak var cryptoPrice: UILabel!
+    @IBOutlet weak var cryptoRank: UILabel!
     
     override func awakeFromNib() {
         super.awakeFromNib()

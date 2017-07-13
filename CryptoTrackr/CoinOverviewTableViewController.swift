@@ -7,18 +7,45 @@
 //
 
 import UIKit
+import Alamofire
+import Gloss
 
 class CoinOverviewTableViewController: UITableViewController {
 
-    let topTen = ["Bitcoin", "Ethereum", "Ripple", "Litecoin", "Ethereum Classic", "Dash", "NEM", "IOTA", "Monero", "BitConnect"]
+    var cryptoList = [CryptoModel]()
+    var numberOfCrypto = 50
+    
     override func viewDidLoad() {
         super.viewDidLoad()
-
-        // Uncomment the following line to preserve selection between presentations
-        // self.clearsSelectionOnViewWillAppear = false
-
-        // Uncomment the following line to display an Edit button in the navigation bar for this view controller.
-        // self.navigationItem.rightBarButtonItem = self.editButtonItem()
+        
+        Alamofire.request(("https://api.coinmarketcap.com/v1/ticker/?limit=" + "\(numberOfCrypto)"), method: .get, parameters: ["":""], encoding: URLEncoding.default, headers: nil).responseJSON { (response:DataResponse<Any>) in
+            
+            switch(response.result) {
+            case .success(_):
+                if response.result.value != nil{
+                    
+                    if let result = response.result.value {
+                       let JSON = result as! NSArray
+                    print(JSON)
+                        
+                        guard let cryptoModels = [CryptoModel].from(jsonArray: result as! [JSON]) else {
+                            // handle decoding failure here
+                            return
+                        }
+                        
+                        self.cryptoList = cryptoModels
+                        self.tableView.reloadData()
+                        
+                    }}
+                
+                    break
+                
+            case .failure(_):
+                print(response.result.error!)
+                break
+            }
+        
+        }
     }
 
     override func didReceiveMemoryWarning() {
@@ -35,66 +62,24 @@ class CoinOverviewTableViewController: UITableViewController {
 
     override func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         // #warning Incomplete implementation, return the number of rows
-        return topTen.count
+        return self.cryptoList.count
     }
 
     
     override func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
+        
         let cell = tableView.dequeueReusableCell(withIdentifier: "cryptoCell", for: indexPath) as! CoinOverviewTableViewCell
         
-        cell.crytoLogo.image = UIImage(named: (topTen[indexPath.row]+".png"))
-        print((topTen[indexPath.row]+".png"))
-        cell.cryptoName.text = topTen[indexPath.row]
-
-        // Configure the cell...
-
+        cell.crytoLogo.image = UIImage(named: ((self.cryptoList[indexPath.row].name)! + ".png"))
+        cell.cryptoName.text = self.cryptoList[indexPath.row].name
+        cell.cryptoPrice.text = ("$" + self.cryptoList[indexPath.row].price_usd!)
+        cell.cryptoRank.text = self.cryptoList[indexPath.row].rank!
+        
+        
         return cell
     }
     
 
-    /*
-    // Override to support conditional editing of the table view.
-    override func tableView(_ tableView: UITableView, canEditRowAt indexPath: IndexPath) -> Bool {
-        // Return false if you do not want the specified item to be editable.
-        return true
-    }
-    */
 
-    /*
-    // Override to support editing the table view.
-    override func tableView(_ tableView: UITableView, commit editingStyle: UITableViewCellEditingStyle, forRowAt indexPath: IndexPath) {
-        if editingStyle == .delete {
-            // Delete the row from the data source
-            tableView.deleteRows(at: [indexPath], with: .fade)
-        } else if editingStyle == .insert {
-            // Create a new instance of the appropriate class, insert it into the array, and add a new row to the table view
-        }    
-    }
-    */
-
-    /*
-    // Override to support rearranging the table view.
-    override func tableView(_ tableView: UITableView, moveRowAt fromIndexPath: IndexPath, to: IndexPath) {
-
-    }
-    */
-
-    /*
-    // Override to support conditional rearranging of the table view.
-    override func tableView(_ tableView: UITableView, canMoveRowAt indexPath: IndexPath) -> Bool {
-        // Return false if you do not want the item to be re-orderable.
-        return true
-    }
-    */
-
-    /*
-    // MARK: - Navigation
-
-    // In a storyboard-based application, you will often want to do a little preparation before navigation
-    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-        // Get the new view controller using segue.destinationViewController.
-        // Pass the selected object to the new view controller.
-    }
-    */
 
 }
