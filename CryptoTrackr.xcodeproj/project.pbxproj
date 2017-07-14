@@ -10,6 +10,9 @@
 		846DAAEA1F1545F20072A9F4 /* CryptoModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 846DAAE91F1545F20072A9F4 /* CryptoModel.swift */; };
 		846DAAF01F16B98F0072A9F4 /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = 846DAAEF1F16B98F0072A9F4 /* GoogleService-Info.plist */; };
 		84CB3EF41F16D7C30009F457 /* UserLoginViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 84CB3EF31F16D7C30009F457 /* UserLoginViewController.swift */; };
+		84CB3EF81F17B34F0009F457 /* FirebaseUser.swift in Sources */ = {isa = PBXBuildFile; fileRef = 84CB3EF71F17B34F0009F457 /* FirebaseUser.swift */; };
+		84CB3EFA1F17B5A50009F457 /* Transaction.swift in Sources */ = {isa = PBXBuildFile; fileRef = 84CB3EF91F17B5A50009F457 /* Transaction.swift */; };
+		84CB3EFC1F180C7F0009F457 /* MyPortfolioTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 84CB3EFB1F180C7F0009F457 /* MyPortfolioTableViewCell.swift */; };
 		84E121E81F14D25A003021B3 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 84E121E71F14D25A003021B3 /* AppDelegate.swift */; };
 		84E121EF1F14D25A003021B3 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 84E121ED1F14D25A003021B3 /* Main.storyboard */; };
 		84E121F11F14D25A003021B3 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 84E121F01F14D25A003021B3 /* Assets.xcassets */; };
@@ -26,6 +29,9 @@
 		846DAAE91F1545F20072A9F4 /* CryptoModel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CryptoModel.swift; sourceTree = "<group>"; };
 		846DAAEF1F16B98F0072A9F4 /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "GoogleService-Info.plist"; sourceTree = "<group>"; };
 		84CB3EF31F16D7C30009F457 /* UserLoginViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = UserLoginViewController.swift; sourceTree = "<group>"; };
+		84CB3EF71F17B34F0009F457 /* FirebaseUser.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = FirebaseUser.swift; sourceTree = "<group>"; };
+		84CB3EF91F17B5A50009F457 /* Transaction.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Transaction.swift; sourceTree = "<group>"; };
+		84CB3EFB1F180C7F0009F457 /* MyPortfolioTableViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MyPortfolioTableViewCell.swift; sourceTree = "<group>"; };
 		84E121E41F14D25A003021B3 /* CryptoTrackr.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = CryptoTrackr.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		84E121E71F14D25A003021B3 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		84E121EE1F14D25A003021B3 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
@@ -91,8 +97,11 @@
 				84E121E71F14D25A003021B3 /* AppDelegate.swift */,
 				84E121ED1F14D25A003021B3 /* Main.storyboard */,
 				84E122011F14FA36003021B3 /* CoinOverviewTableViewCell.swift */,
+				84CB3EFB1F180C7F0009F457 /* MyPortfolioTableViewCell.swift */,
 				84E121FD1F14D7BF003021B3 /* CoinOverviewTableViewController.swift */,
 				84CB3EF31F16D7C30009F457 /* UserLoginViewController.swift */,
+				84CB3EF71F17B34F0009F457 /* FirebaseUser.swift */,
+				84CB3EF91F17B5A50009F457 /* Transaction.swift */,
 				846DAAE91F1545F20072A9F4 /* CryptoModel.swift */,
 				84E121FB1F14D792003021B3 /* MyPortfolioOverviewTableViewController.swift */,
 				84E121F01F14D25A003021B3 /* Assets.xcassets */,
@@ -230,7 +239,10 @@
 			files = (
 				84E121FE1F14D7BF003021B3 /* CoinOverviewTableViewController.swift in Sources */,
 				84E122021F14FA36003021B3 /* CoinOverviewTableViewCell.swift in Sources */,
+				84CB3EFA1F17B5A50009F457 /* Transaction.swift in Sources */,
 				84E121E81F14D25A003021B3 /* AppDelegate.swift in Sources */,
+				84CB3EF81F17B34F0009F457 /* FirebaseUser.swift in Sources */,
+				84CB3EFC1F180C7F0009F457 /* MyPortfolioTableViewCell.swift in Sources */,
 				84CB3EF41F16D7C30009F457 /* UserLoginViewController.swift in Sources */,
 				84E121FC1F14D792003021B3 /* MyPortfolioOverviewTableViewController.swift in Sources */,
 				846DAAEA1F1545F20072A9F4 /* CryptoModel.swift in Sources */,

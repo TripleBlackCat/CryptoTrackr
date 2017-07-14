@@ -13,6 +13,7 @@ import Firebase
 
 class UserLoginViewController: UIViewController, LoginButtonDelegate {
 
+    var firebaseUser = FirebaseUser()
     @IBOutlet weak var loginContainerView: UIView!
 
     
@@ -61,7 +62,11 @@ class UserLoginViewController: UIViewController, LoginButtonDelegate {
             if let currentUser = Auth.auth().currentUser {
                 print(currentUser.uid)
                 print(currentUser.displayName)
-                print(currentUser.photoURL)
+
+                self.firebaseUser.firebaseUserID = currentUser.uid
+                self.firebaseUser.name = currentUser.displayName
+                
+                
             }
             
             // Navigate to the main view controller
@@ -71,7 +76,6 @@ class UserLoginViewController: UIViewController, LoginButtonDelegate {
         if let accessToken = AccessToken.current {
             // User is logged in, use 'accessToken' here.
             self.performSegue(withIdentifier: "navToMain", sender: nil)
-            print("Here bitch")
             print(accessToken)
             
         }

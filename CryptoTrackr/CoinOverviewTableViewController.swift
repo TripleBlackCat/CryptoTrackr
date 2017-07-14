@@ -13,7 +13,7 @@ import Gloss
 class CoinOverviewTableViewController: UITableViewController {
 
     var cryptoList = [CryptoModel]()
-    var numberOfCrypto = 50
+    var numberOfCrypto = 20
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -69,6 +69,7 @@ class CoinOverviewTableViewController: UITableViewController {
     override func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         
         let cell = tableView.dequeueReusableCell(withIdentifier: "cryptoCell", for: indexPath) as! CoinOverviewTableViewCell
+    
         
         cell.crytoLogo.image = UIImage(named: ((self.cryptoList[indexPath.row].name)! + ".png"))
         cell.cryptoName.text = self.cryptoList[indexPath.row].name
@@ -79,7 +80,42 @@ class CoinOverviewTableViewController: UITableViewController {
         return cell
     }
     
+    @IBOutlet weak var refreshCryptoData: UIBarButtonItem!
 
+    @IBAction func refreshCryptoData(_ sender: Any) {
+//        
+//        Alamofire.request(("https://api.coinmarketcap.com/v1/ticker/?limit=" + "\(numberOfCrypto)"), method: .get, parameters: ["":""], encoding: URLEncoding.default, headers: nil).responseJSON { (response:DataResponse<Any>) in
+//            
+//            switch(response.result) {
+//            case .success(_):
+//                if response.result.value != nil{
+//                    
+//                    if let result = response.result.value {
+//                        let JSON = result as! NSArray
+//                        print(JSON)
+//                        
+//                        guard let cryptoModels = [CryptoModel].from(jsonArray: result as! [JSON]) else {
+//                            // handle decoding failure here
+//                            return
+//                        }
+//                        
+//                        self.cryptoList = cryptoModels
+//                        self.tableView.reloadData()
+//                        
+//                    }}
+//                
+//                break
+//                
+//            case .failure(_):
+//                print(response.result.error!)
+//                break
+//            }
+//            
+//        }
+
+        
+        
+    }
 
 
 }
